@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semana 05 — Objetos, Dados e Assincronismo</title>
+  <style>
+    :root { font-family: Arial, sans-serif; color: #202124; background: #f5f7fb; }
+    body { max-width: 900px; margin: 0 auto; padding: 24px 16px; line-height: 1.5; }
+    h1 { margin-bottom: .25rem; }
+    .intro { color: #555; margin-top: 0; }
+    section { background: white; border: 1px solid #dfe3eb; border-radius: 12px; padding: 18px; margin: 18px 0; }
+    form { display: flex; flex-wrap: wrap; gap: 8px; }
+    input { flex: 1; min-width: 180px; padding: 10px; border: 1px solid #aab2c0; border-radius: 7px; font-size: 1rem; }
+    button { padding: 10px 16px; border: 0; border-radius: 7px; background: #2457c5; color: white; font-weight: 600; cursor: pointer; }
+    button:disabled { opacity: .6; cursor: wait; }
+    .status { min-height: 1.5em; color: #9a3412; }
+    dl { display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; }
+    dt { font-weight: bold; }
+    dd { margin: 0; }
+    ul { padding-left: 22px; }
+    .pokemon-card { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .pokemon-card img { width: 120px; height: 120px; image-rendering: pixelated; object-fit: contain; }
+    .muted { color: #666; }
+  </style>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <h1>Semana 05 — Objetos, Dados e Assincronismo</h1>
+  <p class="intro">Exercícios de validação de dados, consumo de APIs e manipulação dinâmica do DOM.</p>
+
+  <section>
+    <h2>Parte 1 — Pedidos válidos e faturamento</h2>
+    <p>Os resultados desta parte são exibidos no Console do navegador (F12).</p>
+    <button id="mostrarPedidos" type="button">Mostrar resultados dos pedidos</button>
+    <pre id="resultadoPedidos" aria-live="polite"></pre>
+  </section>
+
+  <section>
+    <h2>Parte 2 — Buscador de CEP</h2>
+    <form id="formCep">
+      <label for="cep">CEP (8 dígitos):</label>
+      <input id="cep" name="cep" inputmode="numeric" autocomplete="postal-code" placeholder="Ex.: 01001000" maxlength="20" required>
+      <button id="buscarCep" type="submit">Buscar CEP</button>
+    </form>
+    <p id="statusCep" class="status" role="status" aria-live="polite"></p>
+    <dl id="resultadoCep"></dl>
+    <h3>Histórico de CEPs pesquisados</h3>
+    <ul id="historicoCep"><li class="muted">Nenhuma pesquisa ainda.</li></ul>
+  </section>
+
+  <section>
+    <h2>Parte 3 — Mini Pokédex</h2>
+    <form id="formPokemon">
+      <label for="pokemon">Nome do Pokémon:</label>
+      <input id="pokemon" name="pokemon" placeholder="Ex.: pikachu" autocomplete="off" required>
+      <button id="buscarPokemon" type="submit">Buscar Pokémon</button>
+    </form>
+    <p id="statusPokemon" class="status" role="status" aria-live="polite"></p>
+    <div id="resultadoPokemon" aria-live="polite"></div>
+  </section>
+
+  <section>
+    <h2>Parte 4 — Reflexão</h2>
+    <p>Consulte o <code>README.md</code> para a resposta sobre <code>Promise.all</code>.</p>
+  </section>
+</body>
+</html>
